@@ -4,10 +4,10 @@ using UnityEngine;
 public class PlayerGlow : MonoBehaviour
 {
     [Header("Idle Glow Settings")]
-    public Color idleGlowColor = Color.white; // Glow blanco
-    public float glowSpeed = 0.5f;            // Glow lento
-    public float minIntensity = 0.7f;         // Brillo mínimo
-    public float maxIntensity = 1.2f;         // Brillo máximo
+    public Color idleGlowColor = Color.white; 
+    public float glowSpeed = 0.5f;            
+    public float minIntensity = 0.7f;       
+    public float maxIntensity = 1.2f;  
 
     private SpriteRenderer sprite;
     private Color originalColor;

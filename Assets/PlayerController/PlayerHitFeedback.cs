@@ -15,9 +15,9 @@ public class PlayerHitFeedback : MonoBehaviour
     public float blinkInterval = 0.1f;
 
     [Header("Knockback Settings")]
-    public float knockbackForce = 12f;       // Fuerza del retroceso
-    public float knockbackTime = 0.15f;     // Duración del retroceso
-    public float rotationSpeed = 720f;      // Velocidad de rotación en grados/segundo
+    public float knockbackForce = 12f;     
+    public float knockbackTime = 0.15f;    
+    public float rotationSpeed = 720f;     
 
     private SpriteRenderer spriteRenderer;
     private Vector3 originalScale;
@@ -26,7 +26,7 @@ public class PlayerHitFeedback : MonoBehaviour
     private Vector3 startHitPosition;
     private Quaternion startRotation;
 
-    private Coroutine hitCoroutine; // Controla si ya hay un hit en curso
+    private Coroutine hitCoroutine; 
 
     private AudioSource audioSource;
 

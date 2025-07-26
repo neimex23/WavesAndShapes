@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f; // Velocidad de movimiento
+    public float playerSpeed = 5f; 
 
     private PlayerControls controls;
     private Vector2 movement;
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector3 move = new Vector3(movement.x, movement.y, 0f);
-        transform.position += move * speed * Time.deltaTime;
+        transform.position += move * playerSpeed * Time.deltaTime;
 
         if (move.sqrMagnitude > 0.001f)
         {
@@ -49,9 +49,11 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("EnemyBall") && !playerDash.IsDashing())
         {
             var hitFeedback = GetComponent<PlayerHitFeedback>();
+            var healthControl = GetComponent<PlayerHealth>();
             if (!hitFeedback.IsInvincible())
             {
                 hitFeedback.TriggerHit(collision.transform.position);
+                healthControl.TakeDamage(1);
             }
             Destroy(collision.gameObject);
             Debug.Log("Colisión con enemigo detectada");

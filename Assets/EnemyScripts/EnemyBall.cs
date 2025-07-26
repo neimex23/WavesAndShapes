@@ -3,12 +3,12 @@ using UnityEngine;
 public class EnemyBall : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float speed = 5f;            // Velocidad de la bala
-    public Vector3 direction = Vector3.zero;  // Dirección (puede setearse externamente)
+    public float speed = 5f;            
+    public Vector3 direction = Vector3.zero;  
 
     [Header("Auto Destroy Settings")]
-    public float margin = 1f;           // Margen fuera de la pantalla antes de destruir
-    public bool autoDestroy = true;     // Destruir automáticamente al salir del rango
+    public float margin = 1f;           
+    public bool autoDestroy = true;    
 
     private Camera mainCamera;
 
