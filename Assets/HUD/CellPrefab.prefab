@@ -92,7 +92,7 @@ MonoBehaviour:
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   dangerColor: {r: 1, g: 0, b: 0, a: 0.5}
   pulseSpeed: 2
-  pulseIntensity: 0.5
+  pulseIntensity: 1
   alphaPulse: 0.6
 --- !u!1 &6583622836698324788
 GameObject:

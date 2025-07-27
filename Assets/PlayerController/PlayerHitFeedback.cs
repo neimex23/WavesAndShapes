@@ -23,8 +23,6 @@ public class PlayerHitFeedback : MonoBehaviour
     private Vector3 originalScale;
     private bool isInvincible = false;
     private Vector3 knockbackDirection;
-    private Vector3 startHitPosition;
-    private Quaternion startRotation;
 
     private Coroutine hitCoroutine; 
 

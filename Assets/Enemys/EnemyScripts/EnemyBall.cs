@@ -5,20 +5,28 @@ public class EnemyBall : MonoBehaviour
     [Header("Movement Settings")]
     public float speed = 5f;            
     public Vector3 direction = Vector3.zero;  
+    public bool triggerPlayer = false;
 
     [Header("Auto Destroy Settings")]
     public float margin = 1f;           
     public bool autoDestroy = true;    
 
     private Camera mainCamera;
+    private PlayerController playerController;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+        playerController = FindFirstObjectByType<PlayerController>();
     }
 
     private void Update()
     {
+        if (triggerPlayer && playerController != null)
+        {
+            direction = (playerController.transform.position - transform.position).normalized;
+        }
+
         transform.position += direction * speed * Time.deltaTime;
 
         if (autoDestroy)
