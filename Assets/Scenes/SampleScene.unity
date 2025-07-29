@@ -871,6 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 3116294849705255998, guid: c69a07c66a0df284c9a6d8528f67f9b2, type: 3}
+  ballSpikePrefab: {fileID: 1424029734470388391, guid: cc2df52d17feb0c489195319092f3315, type: 3}
 --- !u!4 &1625491922
 Transform:
   m_ObjectHideFlags: 0

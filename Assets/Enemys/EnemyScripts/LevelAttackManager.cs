@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class LevelAttackManager : MonoBehaviour
 {
-    [Header("Prefabs (Solo para bolas)")]
+    [Header("Prefabs")]
     public EnemyBall ballPrefab;
+    public EnemyBall ballSpikePrefab;
 
     public void SpawnEnemyLine(Vector2 start, Vector2 end, EnemyLine.LineType type, float warningTime = 1.5f)
     {
@@ -31,6 +32,14 @@ public class LevelAttackManager : MonoBehaviour
     public void SpawnEnemyBall(Vector3 position, Vector3 direction, float speed)
     {
         EnemyBall ball = Instantiate(ballPrefab, position, Quaternion.identity);
+        ball.gameObject.tag = "EnemyBall";
+        ball.SetDirectionToTarget(position + direction);
+        ball.SetSpeed(speed);
+    }
+
+    public void SpawnSpikeEnemyBall(Vector3 position, Vector3 direction, float speed)
+    {
+        EnemyBall ball = Instantiate(ballSpikePrefab, position, Quaternion.identity);
         ball.gameObject.tag = "EnemyBall";
         ball.SetDirectionToTarget(position + direction);
         ball.SetSpeed(speed);

@@ -3,8 +3,10 @@ using UnityEngine;
 public class EnemyBall : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float speed = 5f;            
+    public float speed = 5f;
+    public float RotationSpeed = 0f;
     public Vector3 direction = Vector3.zero;  
+    public Vector3 Size = Vector3.one;  
     public bool triggerPlayer = false;
 
     [Header("Auto Destroy Settings")]
@@ -18,6 +20,7 @@ public class EnemyBall : MonoBehaviour
     {
         mainCamera = Camera.main;
         playerController = FindFirstObjectByType<PlayerController>();
+        transform.localScale = Size;
     }
 
     private void Update()
@@ -28,6 +31,11 @@ public class EnemyBall : MonoBehaviour
         }
 
         transform.position += direction * speed * Time.deltaTime;
+
+        if (RotationSpeed > 0f)
+        {
+            transform.Rotate(Vector3.forward, RotationSpeed * Time.deltaTime);
+        }
 
         if (autoDestroy)
             CheckOutOfScreen();
